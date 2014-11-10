@@ -3,13 +3,8 @@ __author__ = 'peiggs'
 from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
-from PIL import ImageFilter
-import random
 from bs4 import BeautifulSoup
-import io
 from urllib.request import urlopen
-import glob, os
-import time
 import datetime
 
 site = "https://keenestatedining.sodexomyway.com/images/WeeklyMenu_tcm575-2231.htm"
@@ -29,48 +24,47 @@ week=['Monday',
       'Sunday']
 
 
-
+stack = [0]
 for node in soup.findAll('span',attrs={'class': 'ul'}):
-    #print(food.join(node.findAll(text=True)[0]))
-    #print(node.findAll(text=True))
-    #print(type(node))
     food.append((node.findAll(text=True)[0]))
-todayMenu.append(week[day])
 menuCounter = 0
-def menuFiller(todayMenu, menuCounter):
-    flag = True
-    flag2 = True
-    for menuItem in todayMenu:
-        todayMenu.append(menuItem)
-        menuCounter = menuCounter +1
-         #Means if the day of Week is not Saturday or Sunday (No breakfast those days!)if day != 5 and day != 6
-        str(menuItem)
-        if menuItem == "Scrambled Eggs": #This is the entire Day's Menu M-F
-            flag = False
-        if menuItem == "Omelet Bar":
-            todayMenu.append("Lunch:")
-            menuCounter = menuCounter +1
-        if menuItem =="French Fries" and flag2:
-            todayMenu.append("Dinner:")
-            menuCounter = menuCounter +1
-            flag2 = False
-        if menuItem == "Scrambled Eggs" and not flag:
-                break
+flag = True
+flag2 = True
+for menuItem in food:
+    todayMenu.append(menuItem)
+    menuCounter = menuCounter +1
+     #Means if the day of Week is not Saturday or Sunday (No breakfast those days!)if day != 5 and day != 6
+    str(menuItem)
+    if menuItem == "Scrambled Eggs": #This is the entire Day's Menu M-F
+        flag = False
+    if menuItem == "Omelet Bar":
+        todayMenu.append("Lunch:")
+    if menuItem == ("French Fries" or "Curly French Fries") and flag2:
+        todayMenu.append("Dinner:")
+        flag2 = False
 
-
-        todayMenu.append(menuItem)
+    if menuItem == "Scrambled Eggs":
+        tempCounter = menuCounter - 1
+        stack.append(tempCounter)
 
 
 
 
-
+print(stack)
+monday = todayMenu[0:31]
+tuesday = todayMenu[31:64]
+wednesday = todayMenu[64:95]
+thursday = todayMenu[95:129]
+print(monday)
+print(tuesday)
+print(wednesday)
+print(thursday)
+sunday = todayMenu
+print(sunday)
    # elif day == 6:
 
    # elif day == 5:
 
-
-
-menuFiller(todayMenu, menuCounter)
 
 
 if __name__ == '__main__':
