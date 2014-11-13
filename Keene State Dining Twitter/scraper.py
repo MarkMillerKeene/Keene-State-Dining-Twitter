@@ -24,7 +24,7 @@ week=['Monday',
       'Sunday']
 
 
-stack = [0]
+stack = []
 for node in soup.findAll('span',attrs={'class': 'ul'}):
     food.append((node.findAll(text=True)[0]))
 menuCounter = 0
@@ -37,10 +37,10 @@ for menuItem in food:
     str(menuItem)
     if menuItem == "Scrambled Eggs": #This is the entire Day's Menu M-F
         flag = False
-    if menuItem == "Omelet Bar":
-        todayMenu.append("Lunch:")
+
+
     if menuItem == ("French Fries" or "Curly French Fries") and flag2:
-        todayMenu.append("Dinner:")
+
         flag2 = False
 
     if menuItem == "Scrambled Eggs":
@@ -51,16 +51,18 @@ for menuItem in food:
 
 
 print(stack)
-monday = todayMenu[0:31]
-tuesday = todayMenu[31:64]
-wednesday = todayMenu[64:95]
-thursday = todayMenu[95:129]
+monday = todayMenu[stack[0]:stack[1]]
+
+tuesday = todayMenu[stack[1]:stack[2]]
+wednesday = todayMenu[stack[2]:stack[3]]
+thursday = todayMenu[stack[3]:stack[4]]
+friday = todayMenu[stack[4]:stack[5]]
 print(monday)
 print(tuesday)
 print(wednesday)
 print(thursday)
 sunday = todayMenu
-print(sunday)
+print(friday)
    # elif day == 6:
 
    # elif day == 5:
@@ -84,9 +86,9 @@ if __name__ == '__main__':
     img = Image.new('RGB', (width+4, height+4), colorBackground)
     d = ImageDraw.Draw(img)
     count = 0
-    for item in todayMenu:
+    for item in monday:
         item = str(item)
-        y = len(todayMenu)
+        y = len(monday)
         x= 20
         if item not in week:
             x = x+200
