@@ -36,8 +36,8 @@
       <file leaf-file-name="instagrambot.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$USER_HOME$/PycharmProjects/ellobot/instagrambot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46041667" vertical-offset="0" max-vertical-offset="1156">
-              <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.23020834" vertical-offset="0" max-vertical-offset="1156">
+              <caret line="21" column="39" selection-start-line="0" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -115,7 +115,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/ellobot/instagrambot.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../InstagramBot" />
     <property name="FullScreen" value="false" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -415,8 +415,8 @@
     </entry>
     <entry file="file://$USER_HOME$/PycharmProjects/ellobot/instagrambot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46041667" vertical-offset="0" max-vertical-offset="1156">
-          <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.23020834" vertical-offset="0" max-vertical-offset="1156">
+          <caret line="21" column="39" selection-start-line="0" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding />
         </state>
       </provider>
